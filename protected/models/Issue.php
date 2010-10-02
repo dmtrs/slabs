@@ -41,7 +41,7 @@ class Issue extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_code, sc_id, is_date, st_id, is_title, is_report, py_id', 'required'),
+			array('is_code, sc_id, st_id, is_title, is_report, py_id', 'required'),
 			array('sc_id, se_id, st_id, py_id', 'numerical', 'integerOnly'=>true),
 			array('is_code', 'length', 'max'=>30),
 			array('is_title', 'length', 'max'=>20),

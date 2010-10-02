@@ -73,6 +73,8 @@ class IssueController extends Controller
 		if(isset($_POST['Issue']))
 		{
 			$model->attributes=$_POST['Issue'];
+                        $open = Status::model()->find("st_descr LIKE 'open'");
+                        $model->st_id=$open->st_id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->is_id));
 		}

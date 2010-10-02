@@ -25,21 +25,9 @@
     </div>
 
     <div class="row">
-	<?php echo $form->labelEx($model,'is_date'); ?>
-	<?php echo $form->textField($model,'is_date'); ?>
-	<?php echo $form->error($model,'is_date'); ?>
-    </div>
-
-    <div class="row">
 	<?php echo $form->labelEx($model,'se_id'); ?>
 	<?php echo $form->textField($model,'se_id'); ?>
 	<?php echo $form->error($model,'se_id'); ?>
-    </div>
-
-    <div class="row">
-	<?php echo $form->labelEx($model,'st_id'); ?>
-	<?php echo $form->textField($model,'st_id'); ?>
-	<?php echo $form->error($model,'st_id'); ?>
     </div>
 
     <div class="row">
@@ -55,8 +43,11 @@
     </div>
 
     <div class="row">
-	<?php echo $form->labelEx($model,'py_id'); ?>
-	<?php echo $form->textField($model,'py_id'); ?>
+	<?php 
+            echo $form->labelEx($model,'py_id'); 
+            $categories = Priority::model()->findAll();
+            $list = CHtml::listData($categories,'py_id','py_description');
+            echo $form->dropDownList($model,'py_id',$list); ?>
 	<?php echo $form->error($model,'py_id'); ?>
     </div>
 
