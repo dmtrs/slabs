@@ -2,14 +2,16 @@
 
 /**
  * This is the model class for table "slabs_priority".
- *
- * The followings are the available columns in table 'slabs_priority':
- * @property integer $py_id
- * @property string $py_description
- * @property string $py_color
  */
 class Priority extends CActiveRecord
 {
+	/**
+	 * The followings are the available columns in table 'slabs_priority':
+	 * @var integer $py_id
+	 * @var string $py_description
+	 * @var string $py_color
+	 */
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Priority the static model class
@@ -52,7 +54,7 @@ class Priority extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'slabs_issues' => array(self::HAS_MANY, 'Issue', 'py_id'),
+			'issues' => array(self::HAS_MANY, 'Issue', 'py_id'),
 		);
 	}
 
@@ -85,7 +87,7 @@ class Priority extends CActiveRecord
 
 		$criteria->compare('py_color',$this->py_color,true);
 
-		return new CActiveDataProvider('Priority', array(
+		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
 	}

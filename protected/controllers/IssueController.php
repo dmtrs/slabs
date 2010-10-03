@@ -3,10 +3,10 @@
 class IssueController extends Controller
 {
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * @var string the default layout for the views. Defaults to 'column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='column2';
 
 	/**
 	 * @var CActiveRecord the currently loaded data model instance.
@@ -73,8 +73,6 @@ class IssueController extends Controller
 		if(isset($_POST['Issue']))
 		{
 			$model->attributes=$_POST['Issue'];
-                        $open = Status::model()->find("st_descr LIKE 'open'");
-                        $model->st_id=$open->st_id;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->is_id));
 		}
@@ -143,7 +141,6 @@ class IssueController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Issue('search');
-		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Issue']))
 			$model->attributes=$_GET['Issue'];
 

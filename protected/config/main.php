@@ -17,15 +17,14 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'slabs',
 		),
-		*/
+		
 	),
 
 	// application components

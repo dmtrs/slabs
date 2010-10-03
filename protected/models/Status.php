@@ -2,14 +2,16 @@
 
 /**
  * This is the model class for table "slabs_status".
- *
- * The followings are the available columns in table 'slabs_status':
- * @property integer $st_id
- * @property string $st_descr
- * @property string $st_color
  */
 class Status extends CActiveRecord
 {
+	/**
+	 * The followings are the available columns in table 'slabs_status':
+	 * @var integer $st_id
+	 * @var string $st_descr
+	 * @var string $st_color
+	 */
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Status the static model class
@@ -51,8 +53,8 @@ class Status extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'slabs_issues' => array(self::HAS_MANY, 'Issue', 'st_id'),
-			'slabs_reports' => array(self::HAS_MANY, 'Report', 'st_id'),
+			'issues' => array(self::HAS_MANY, 'Issue', 'st_id'),
+			'reports' => array(self::HAS_MANY, 'Report', 'st_id'),
 		);
 	}
 
@@ -85,7 +87,7 @@ class Status extends CActiveRecord
 
 		$criteria->compare('st_color',$this->st_color,true);
 
-		return new CActiveDataProvider('Status', array(
+		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
 	}

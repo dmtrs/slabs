@@ -45,13 +45,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'is_id',
 		'is_code',
 		'sc_id',
-		'is_date',
-		'se_id',
 		'st_id',
-		/*
 		'is_title',
 		'is_report',
+		/*
 		'py_id',
+		'is_create_date',
+		'is_last_report',
+		'us_name',
 		*/
 		array(
 			'class'=>'CButtonColumn',

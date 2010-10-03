@@ -21,16 +21,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'is_date'); ?>
-		<?php echo $form->textField($model,'is_date'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'se_id'); ?>
-		<?php echo $form->textField($model,'se_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'st_id'); ?>
 		<?php echo $form->textField($model,'st_id'); ?>
 	</div>
@@ -48,6 +38,21 @@
 	<div class="row">
 		<?php echo $form->label($model,'py_id'); ?>
 		<?php echo $form->textField($model,'py_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'is_create_date'); ?>
+		<?php echo $form->textField($model,'is_create_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'is_last_report'); ?>
+		<?php echo $form->textField($model,'is_last_report'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'us_name'); ?>
+		<?php echo $form->textField($model,'us_name',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row buttons">

@@ -2,15 +2,17 @@
 
 /**
  * This is the model class for table "slabs_person".
- *
- * The followings are the available columns in table 'slabs_person':
- * @property integer $cs_id
- * @property string $cs_name
- * @property string $cs_phone
- * @property string $cs_email
  */
 class Person extends CActiveRecord
 {
+	/**
+	 * The followings are the available columns in table 'slabs_person':
+	 * @var integer $ps_id
+	 * @var string $ps_name
+	 * @var string $ps_phone
+	 * @var string $ps_email
+	 */
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Person the static model class
@@ -36,13 +38,13 @@ class Person extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cs_name', 'required'),
-			array('cs_name', 'length', 'max'=>20),
-			array('cs_phone', 'length', 'max'=>30),
-			array('cs_email', 'length', 'max'=>45),
+			array('ps_name', 'required'),
+			array('ps_name', 'length', 'max'=>20),
+			array('ps_phone', 'length', 'max'=>30),
+			array('ps_email', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('cs_id, cs_name, cs_phone, cs_email', 'safe', 'on'=>'search'),
+			array('ps_id, ps_name, ps_phone, ps_email', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,7 +56,7 @@ class Person extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'slabs_services' => array(self::HAS_MANY, 'Service', 'ps_id'),
+			'services' => array(self::HAS_MANY, 'Service', 'ps_id'),
 		);
 	}
 
@@ -64,10 +66,10 @@ class Person extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'cs_id' => 'Cs',
-			'cs_name' => 'Cs Name',
-			'cs_phone' => 'Cs Phone',
-			'cs_email' => 'Cs Email',
+			'ps_id' => 'Ps',
+			'ps_name' => 'Ps Name',
+			'ps_phone' => 'Ps Phone',
+			'ps_email' => 'Ps Email',
 		);
 	}
 
@@ -82,15 +84,15 @@ class Person extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('cs_id',$this->cs_id);
+		$criteria->compare('ps_id',$this->ps_id);
 
-		$criteria->compare('cs_name',$this->cs_name,true);
+		$criteria->compare('ps_name',$this->ps_name,true);
 
-		$criteria->compare('cs_phone',$this->cs_phone,true);
+		$criteria->compare('ps_phone',$this->ps_phone,true);
 
-		$criteria->compare('cs_email',$this->cs_email,true);
+		$criteria->compare('ps_email',$this->ps_email,true);
 
-		return new CActiveDataProvider('Person', array(
+		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
 	}

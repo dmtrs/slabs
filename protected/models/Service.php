@@ -2,15 +2,17 @@
 
 /**
  * This is the model class for table "slabs_service".
- *
- * The followings are the available columns in table 'slabs_service':
- * @property integer $se_id
- * @property string $se_description
- * @property string $se_serialnumber
- * @property integer $ps_id
  */
 class Service extends CActiveRecord
 {
+	/**
+	 * The followings are the available columns in table 'slabs_service':
+	 * @var integer $se_id
+	 * @var string $se_description
+	 * @var string $se_serialnumber
+	 * @var integer $ps_id
+	 */
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Service the static model class
@@ -53,7 +55,7 @@ class Service extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'slabs_issues' => array(self::HAS_MANY, 'Issue', 'se_id'),
+			'issues' => array(self::HAS_MANY, 'Issue', 'se_id'),
 			'ps' => array(self::BELONGS_TO, 'Person', 'ps_id'),
 		);
 	}
@@ -90,7 +92,7 @@ class Service extends CActiveRecord
 
 		$criteria->compare('ps_id',$this->ps_id);
 
-		return new CActiveDataProvider('Service', array(
+		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
 	}
