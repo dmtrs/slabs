@@ -27,7 +27,7 @@ class Issue extends CActiveRecord
 	{
 		if(parent::beforeSave()) {
 			if($this->isNewRecord)
-			{	
+			{
 				$this->is_create_date = $this->is_last_report = date("Y-m-d G:i:s",time());
 				$this->us_name = Yii::app()->user->id;
 				$this->st_id = Status::model()->find("st_descr LIKE 'open'")->st_id;

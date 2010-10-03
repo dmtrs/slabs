@@ -76,7 +76,7 @@ class IssueController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->is_id));
 		}
-
+		$model->is_code = uniqid();
 		$this->render('create',array(
 			'model'=>$model,
 		));
