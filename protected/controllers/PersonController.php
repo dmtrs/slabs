@@ -31,7 +31,7 @@ class PersonController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','lookup'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -172,5 +172,26 @@ class PersonController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	public function actionLookup()
+    	{
+       		if(Yii::app()->request->isAjaxRequest && isset($_GET['q']))
+       		{
+          		$name = $_GET['q']; 
+ 	                // this was set with the "max" attribute of the CAutoComplete widget
+          		$limit = min($_GET['limit'], 50); 
+		        $criteria = new CDbCriteria;
+		        $criteria->condition = "ps_name LIKE :sterm";
+		        $criteria->params = array(":sterm"=>"%$name%");
+		        $criteria->limit = $limit;
+		        $personArray = Person::model()->findAll($criteria);
+		        $returnVal = '';
+		        foreach($personArray as $person)
+		        {
+		           $returnVal .= $person->getAttribute('ps_name').'|'
+                                         .$person->getAttribute('ps_id')."\n";
+		        }
+		        echo $returnVal;
+	      }
 	}
 }

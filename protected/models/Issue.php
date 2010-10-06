@@ -17,6 +17,7 @@ class Issue extends CActiveRecord
 	 * @var string $is_create_date
 	 * @var string $is_last_report
 	 * @var string $us_name
+	 * @var integer $ps_id
 	 */
 
 	/**
