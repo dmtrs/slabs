@@ -58,15 +58,15 @@ class Issue extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('is_code, sc_id, is_title, is_report, py_id', 'required'),
-			array('sc_id, st_id, py_id', 'numerical', 'integerOnly'=>true),
+			array('is_code, sc_id, is_title, is_report, py_id, ps_id', 'required'),
+			array('sc_id, st_id, py_id, ps_id', 'numerical', 'integerOnly'=>true),
 			array('is_code', 'length', 'max'=>30),
 			array('is_title', 'length', 'max'=>50),
 			array('us_name', 'length', 'max'=>45),
 			array('is_create_date, is_last_report', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('is_id, is_code, sc_id, se_id, st_id, is_title, is_report, py_id, is_create_date, is_last_report, us_name', 'safe', 'on'=>'search'),
+			array('is_id, is_code, sc_id, se_id, st_id, is_title, is_report, py_id, is_create_date, is_last_report, us_name, ps_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +78,7 @@ class Issue extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'ps' => array(self::BELONGS_TO, 'Person', 'ps_id'),
 			'sc' => array(self::BELONGS_TO, 'ServiceCategory', 'sc_id'),
 			'st' => array(self::BELONGS_TO, 'Status', 'st_id'),
 			'py' => array(self::BELONGS_TO, 'Priority', 'py_id'),
@@ -103,6 +104,7 @@ class Issue extends CActiveRecord
 			'is_create_date' => 'Issue Date',
 			'is_last_report' => 'Last issue report date',
 			'us_name' => 'User Name',
+			'ps_id' => 'Person',
 		);
 	}
 
@@ -136,6 +138,8 @@ class Issue extends CActiveRecord
 		$criteria->compare('is_last_report',$this->is_last_report,true);
 
 		$criteria->compare('us_name',$this->us_name,true);
+		
+		$criteria->compare('ps_id', $this->ps_id);
 
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,

@@ -23,7 +23,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'us_passwd'); ?>
-		<?php echo $form->textField($model,'us_passwd',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->passwordField($model,'us_passwd',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'us_passwd'); ?>
 	</div>
 

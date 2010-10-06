@@ -2,17 +2,18 @@
 
 /**
  * This is the model class for table "slabs_person".
+ *
+ * The followings are the available columns in table 'slabs_person':
+ * @property integer $ps_id
+ * @property string $ps_name
+ * @property string $ps_phone
+ * @property string $ps_email
+ *
+ * The followings are the available model relations:
+ * @property Issue[] $issues
  */
 class Person extends CActiveRecord
 {
-	/**
-	 * The followings are the available columns in table 'slabs_person':
-	 * @var integer $ps_id
-	 * @var string $ps_name
-	 * @var string $ps_phone
-	 * @var string $ps_email
-	 */
-
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Person the static model class
@@ -56,7 +57,7 @@ class Person extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'services' => array(self::HAS_MANY, 'Service', 'ps_id'),
+			'issues' => array(self::HAS_MANY, 'Issue', 'ps_id'),
 		);
 	}
 
@@ -66,10 +67,10 @@ class Person extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ps_id' => 'Id',
-			'ps_name' => 'Full name',
-			'ps_phone' => 'Phonenumber',
-			'ps_email' => 'e-mail',
+			'ps_id' => 'Ps',
+			'ps_name' => 'Ps Name',
+			'ps_phone' => 'Ps Phone',
+			'ps_email' => 'Ps Email',
 		);
 	}
 
@@ -85,11 +86,8 @@ class Person extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ps_id',$this->ps_id);
-
 		$criteria->compare('ps_name',$this->ps_name,true);
-
 		$criteria->compare('ps_phone',$this->ps_phone,true);
-
 		$criteria->compare('ps_email',$this->ps_email,true);
 
 		return new CActiveDataProvider(get_class($this), array(
