@@ -54,11 +54,14 @@ class IssueController extends Controller
 	 */
 	public function actionView()
 	{
+		$issue = $this->loadModel();
+		//$report = $this->newReport($issue);
+
 		$this->render('view',array(
-			'model'=>$this->loadModel(),
+			'model'=>$issue,
+			'report'=>$issue->reports,
 		));
 	}
-
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

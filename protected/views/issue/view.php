@@ -31,4 +31,8 @@ $this->menu=array(
 	),
 )); ?>
 <div id="reports">
+	<?php //$this->renderPartial('_reports',array(
+		//'issue'=>$model,
+		//'reports'=>$model->reports,
+	//)); ?>
 </div>

@@ -81,8 +81,8 @@ class Issue extends CActiveRecord
 			'sc' => array(self::BELONGS_TO, 'ServiceCategory', 'sc_id'),
 			'st' => array(self::BELONGS_TO, 'Status', 'st_id'),
 			'py' => array(self::BELONGS_TO, 'Priority', 'py_id'),
-			'us' => array(self::BELONGS_TO, 'Users', 'us_name'),
-			'reports' => array(self::HAS_MANY, 'Report', 'is_id'),
+			'us' => array(self::BELONGS_TO, 'User', 'us_name'),
+			'reports' => array(self::HAS_MANY, 'Report', 'is_code'),
 			'slabsTags' => array(self::MANY_MANY, 'Tag', 'slabs_tag_for_issue(tg_id, is_id)'),
 		);
 	}

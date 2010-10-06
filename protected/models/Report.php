@@ -19,6 +19,19 @@ class Report extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * @return Report the static model class
 	 */
+        protected function beforeSave()
+        {
+                if(parent::beforeSave()) {
+                        if($this->isNewRecord)
+                        {
+                                $this->rp_date =  date("Y-m-d G:i:s",time());
+                                $this->us_name = Yii::app()->user->id;
+                        }
+                        return true;
+                }
+                else return false;
+        }
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);

@@ -20,7 +20,7 @@
             echo $form->labelEx($model,'sc_id'); 
             $categories = ServiceCategory::model()->findAll();
             $list = CHtml::listData($categories,'sc_id','sc_descr');
-            echo $form->dropDownList($model,'sc_id',$list); ?>
+            echo $form->dropDownList($model,'sc_id',$list,array('empty'=>'Select..')); ?>
 	<?php echo $form->error($model,'sc_id'); ?>
     </div>
 
@@ -41,7 +41,7 @@
             echo $form->labelEx($model,'py_id'); 
             $categories = Priority::model()->findAll();
             $list = CHtml::listData($categories,'py_id','py_description');
-            echo $form->dropDownList($model,'py_id',$list); ?>
+            echo $form->dropDownList($model,'py_id',$list,array('empty'=>'Select...')); ?>
 	<?php echo $form->error($model,'py_id'); ?>
     </div>
 
