@@ -69,12 +69,12 @@ class Report extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'rp_id' => 'Rp',
-			'rp_date' => 'Rp Date',
-			'is_id' => 'Is',
-			'rp_report' => 'Rp Report',
-			'st_id' => 'St',
-			'us_id' => 'Us',
+			'rp_id' => 'Id',
+			'rp_date' => 'Date',
+			'is_id' => 'Related issue',
+			'rp_report' => 'Full Report',
+			'st_id' => 'Status',
+			'us_id' => 'Username',
 		);
 	}
 

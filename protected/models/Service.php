@@ -66,10 +66,10 @@ class Service extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'se_id' => 'Se',
-			'se_description' => 'Se Description',
-			'se_serialnumber' => 'Se Serialnumber',
-			'ps_id' => 'Ps',
+			'se_id' => 'Id',
+			'se_description' => 'Description',
+			'se_serialnumber' => 'Serialnumber',
+			'ps_id' => 'Owner',
 		);
 	}
 

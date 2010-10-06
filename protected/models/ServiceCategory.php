@@ -62,8 +62,8 @@ class ServiceCategory extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'sc_id' => 'Sc',
-			'sc_descr' => 'Sc Descr',
+			'sc_id' => 'Id',
+			'sc_descr' => 'Description',
 		);
 	}
 

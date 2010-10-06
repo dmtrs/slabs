@@ -64,9 +64,9 @@ class Priority extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'py_id' => 'Py',
-			'py_description' => 'Py Description',
-			'py_color' => 'Py Color',
+			'py_id' => 'Id',
+			'py_description' => 'Description',
+			'py_color' => 'Color',
 		);
 	}
 

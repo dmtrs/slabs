@@ -20,13 +20,15 @@ $this->menu=array(
 	'attributes'=>array(
 		'is_id',
 		'is_code',
-		'sc_id',
-		'st_id',
+		'sc.sc_descr',
+		'st.st_descr',
 		'is_title',
 		'is_report',
-		'py_id',
+		'py.py_description',
 		'is_create_date',
 		'is_last_report',
-		'us_name',
+		'us.us_fullname',
 	),
 )); ?>
+<div id="reports">
+</div>

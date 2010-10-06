@@ -63,9 +63,9 @@ class Parts extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'pa_id' => 'Pa',
-			'pa_descr' => 'Pa Descr',
-			'pa_serial' => 'Pa Serial',
+			'pa_id' => 'Id',
+			'pa_descr' => ' Descrription',
+			'pa_serial' => 'Serialnumber',
 		);
 	}
 

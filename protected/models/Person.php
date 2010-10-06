@@ -66,10 +66,10 @@ class Person extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ps_id' => 'Ps',
-			'ps_name' => 'Ps Name',
-			'ps_phone' => 'Ps Phone',
-			'ps_email' => 'Ps Email',
+			'ps_id' => 'Id',
+			'ps_name' => 'Full name',
+			'ps_phone' => 'Phonenumber',
+			'ps_email' => 'e-mail',
 		);
 	}
 

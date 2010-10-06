@@ -64,9 +64,9 @@ class Tag extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'tg_id' => 'Tg',
-			'tg_descr' => 'Tg Descr',
-			'tg_freq' => 'Tg Freq',
+			'tg_id' => 'Tag id',
+			'tg_descr' => 'Tag Description',
+			'tg_freq' => 'Tag Frequency',
 		);
 	}
 

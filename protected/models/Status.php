@@ -64,9 +64,9 @@ class Status extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'st_id' => 'St',
-			'st_descr' => 'St Descr',
-			'st_color' => 'St Color',
+			'st_id' => 'Id',
+			'st_descr' => 'Description',
+			'st_color' => 'Color',
 		);
 	}
 

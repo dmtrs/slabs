@@ -61,7 +61,7 @@ class Issue extends CActiveRecord
 			array('is_code, sc_id, is_title, is_report, py_id', 'required'),
 			array('sc_id, st_id, py_id', 'numerical', 'integerOnly'=>true),
 			array('is_code', 'length', 'max'=>30),
-			array('is_title', 'length', 'max'=>20),
+			array('is_title', 'length', 'max'=>50),
 			array('us_name', 'length', 'max'=>45),
 			array('is_create_date, is_last_report', 'safe'),
 			// The following rule is used by search().
@@ -81,7 +81,7 @@ class Issue extends CActiveRecord
 			'sc' => array(self::BELONGS_TO, 'ServiceCategory', 'sc_id'),
 			'st' => array(self::BELONGS_TO, 'Status', 'st_id'),
 			'py' => array(self::BELONGS_TO, 'Priority', 'py_id'),
-			'usName0' => array(self::BELONGS_TO, 'Users', 'us_name'),
+			'us' => array(self::BELONGS_TO, 'Users', 'us_name'),
 			'reports' => array(self::HAS_MANY, 'Report', 'is_id'),
 			'slabsTags' => array(self::MANY_MANY, 'Tag', 'slabs_tag_for_issue(tg_id, is_id)'),
 		);
@@ -93,16 +93,16 @@ class Issue extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'is_id' => 'Is',
-			'is_code' => 'Is Code',
-			'sc_id' => 'Sc',
-			'st_id' => 'St',
-			'is_title' => 'Is Title',
-			'is_report' => 'Is Report',
-			'py_id' => 'Py',
-			'is_create_date' => 'Is Create Date',
-			'is_last_report' => 'Is Last Report',
-			'us_name' => 'Us Name',
+			'is_id' => 'Issue id',
+			'is_code' => 'Issue Code',
+			'sc_id' => 'Service category',
+			'st_id' => 'Status',
+			'is_title' => 'Issue Title',
+			'is_report' => 'Issue Full report',
+			'py_id' => 'Issue Priority',
+			'is_create_date' => 'Issue Date',
+			'is_last_report' => 'Last issue report date',
+			'us_name' => 'User Name',
 		);
 	}
 

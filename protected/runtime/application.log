@@ -23,3 +23,11 @@ REQUEST_URI=/~dmtrs/slabs/
 in /home/dmtrs/public_html/slabs/protected/views/layouts/main.php (47)
 in /home/dmtrs/public_html/slabs/protected/views/layouts/column1.php (7)
 in /home/dmtrs/public_html/slabs/protected/controllers/SiteController.php (32)
+2010/10/04 23:09:46 [error] [system.db.CDbCommand] Error in querying SQL: SHOW COLUMNS FROM `slabs_reports`
+in /home/dmtrsslvdr/public_html/yii/framework/gii/generators/model/ModelCode.php (122)
+in /home/dmtrsslvdr/public_html/yii/framework/gii/generators/model/ModelCode.php (98)
+in /home/dmtrsslvdr/public_html/yii/framework/gii/CCodeGenerator.php (155)
+2010/10/04 23:09:56 [error] [system.db.CDbCommand] Error in querying SQL: SHOW COLUMNS FROM `slabs_report`
+in /home/dmtrsslvdr/public_html/yii/framework/gii/generators/model/ModelCode.php (319)
+in /home/dmtrsslvdr/public_html/yii/framework/gii/generators/model/ModelCode.php (243)
+in /home/dmtrsslvdr/public_html/yii/framework/gii/generators/model/ModelCode.php (71)
