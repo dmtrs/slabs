@@ -31,6 +31,17 @@ $this->menu=array(
 	),
 )); ?>
 <div id="reports">
+	<?php if($model->_reportCount>=1): ?>
+        <h3>
+        	<?php echo $model->_reportCount . ' report(s)'; ?>
+        </h3>
+ 
+	<?php $this->renderPartial('_reports',array(
+        	'issue'=>$model,
+        	'reports'=>$model->reports,
+	)); ?>
+	<?php endif; ?>
+
 	<?php if(Yii::app()->user->hasFlash('reportF')): ?>
 		<div class="flash-success">
 			<?php echo Yii::app()->user->getFlash('reportF'); ?>
