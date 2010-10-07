@@ -31,8 +31,13 @@ $this->menu=array(
 	),
 )); ?>
 <div id="reports">
-	<?php //$this->renderPartial('_reports',array(
-		//'issue'=>$model,
-		//'reports'=>$model->reports,
-	//)); ?>
+	<?php if(Yii::app()->user->hasFlash('reportF')): ?>
+		<div class="flash-success">
+			<?php echo Yii::app()->user->getFlash('reportF'); ?>
+		</div>
+	<?php endif; ?>
+	<h3>Add report. </h3>
+		<?php $this->renderPartial('/report/_form',
+		array('model'=>$report));?>
+
 </div>

@@ -8,8 +8,8 @@
 	<?php echo CHtml::encode($data->rp_date); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('is_id')); ?>:</b>
-	<?php echo CHtml::encode($data->is_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('is_code')); ?>:</b>
+	<?php echo CHtml::encode($data->is_code); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('rp_report')); ?>:</b>
@@ -18,6 +18,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('st_id')); ?>:</b>
 	<?php echo CHtml::encode($data->st_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('us_name')); ?>:</b>
+	<?php echo CHtml::encode($data->us_name); ?>
 	<br />
 
 
