@@ -20,8 +20,9 @@ $this->menu=array(
 	'attributes'=>array(
 		'rp_id',
 		'rp_date',
-		'is_id',
+		'is_code',
 		'rp_report',
 		'st_id',
+		'us_name',
 	),
 )); ?>

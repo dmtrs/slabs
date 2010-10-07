@@ -44,9 +44,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'rp_id',
 		'rp_date',
-		'is_id',
+		'is_code',
 		'rp_report',
 		'st_id',
+		'us_name',
 		array(
 			'class'=>'CButtonColumn',
 		),

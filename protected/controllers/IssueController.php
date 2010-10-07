@@ -54,13 +54,33 @@ class IssueController extends Controller
 	 */
 	public function actionView()
 	{
+		
 		$issue = $this->loadModel();
-		//$report = $this->newReport($issue);
-
+		$report = $this->newReport($issue);
 		$this->render('view',array(
 			'model'=>$issue,
-			'report'=>$issue->reports,
+			'report'=>$report,
 		));
+	}
+	protected function newReport($issue)
+	{
+		$report = new Report;
+		$report->is_code = $issue->is_code;
+		if(isset($_POST['Report']))
+		{
+			$report->attributes = $_POST['Report'];
+			$report->is_code = $issue->is_code;
+			if($report->save())
+			{
+				Yii::app()->user->setFlash('reportF','Report committed.');
+				$issue->st_id = $report->st_id;
+				$issue->save();
+				$this->refresh();
+			}
+			else
+				Yii::app()->user->setFlash('reportF','Report could not be commited.');
+		}
+		return $report;
 	}
 	/**
 	 * Creates a new model.
