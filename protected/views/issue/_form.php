@@ -50,8 +50,7 @@
         	array(
                          //name of the html field that will be generated
 			'name'=>'ps_name', 
-                         //replace controller/action with real ids
-			'url'=>array('person/lookup'), 
+    			'url'=>array('person/lookup'), 
 			'max'=>10, //specifies the max number of items to display
  
                          //specifies the number of chars that must be entered 
@@ -63,7 +62,6 @@
                          //any additional html attributes that go inside of 
                          //the input field can be defined here
 			'htmlOptions'=>array('size'=>'40'), 
- 
 			'methodChain'=>".result(function(event,item){\$(\"#Issue_ps_id\").val(item[1]);})",
 		));
 	?>
