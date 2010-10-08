@@ -6,5 +6,7 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <tt><?php echo __FILE__; ?></tt>.</p>
+<p>Service lab system is a informatic system for storing<br/>
+imports/services etc actions happpened in a computer or <br/>
+other "service lab".<br/>
+Author: Dimitrios Meggidis, tydeas.dr [ at ] gmail.com.</p>
