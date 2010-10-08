@@ -25,6 +25,7 @@ class User extends CActiveRecord
 	{
 		if(parent::beforeSave())
 		{
+			$this->us_passwd = $this->hashPasswd($this->us_passwd);
 			return true;
 		}
 		return false;
