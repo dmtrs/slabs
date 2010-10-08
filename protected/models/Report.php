@@ -75,7 +75,7 @@ class Report extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'usName0' => array(self::BELONGS_TO, 'User', 'us_name'),
+			'us' => array(self::BELONGS_TO, 'User', 'us_name'),
 			'isCode0' => array(self::BELONGS_TO, 'Issue', 'is_code'),
 			'st' => array(self::BELONGS_TO, 'Status', 'st_id'),
 			'slabsParts' => array(self::MANY_MANY, 'Parts', 'slabs_report_used_parts(rp_id, pa_id)'),

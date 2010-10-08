@@ -24,6 +24,12 @@ class Issue extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * @return Issue the static model class
 	 */
+	public $_reportCount;
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->_reportCount = count($this->reports);
+	}
 	protected function beforeSave()
 	{
 		if(parent::beforeSave()) {
