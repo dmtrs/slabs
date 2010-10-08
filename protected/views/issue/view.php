@@ -28,6 +28,7 @@ $this->menu=array(
 		'is_create_date',
 		'is_last_report',
 		'us.us_fullname',
+		'ps.ps_name',
 	),
 )); ?>
 <div id="reports">
