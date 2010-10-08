@@ -40,7 +40,7 @@ class Person extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('ps_name', 'required'),
-			array('ps_name', 'length', 'max'=>20),
+			array('ps_name', 'length', 'max'=>60),
 			array('ps_phone', 'length', 'max'=>30),
 			array('ps_email', 'length', 'max'=>45),
 			// The following rule is used by search().
