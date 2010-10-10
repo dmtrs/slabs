@@ -72,7 +72,7 @@ class IssueController extends Controller
 			$report->is_code = $issue->is_code;
 			if($report->save())
 			{
-				Yii::app()->user->setFlash('reportF','Report committed.');
+				Yii::app()->user->setFlash('reportF','Report '.$issue->is_code.' committed.');
 				$issue->st_id = $report->st_id;
 				$issue->save();
 				$this->refresh();
