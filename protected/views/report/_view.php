@@ -12,8 +12,8 @@
 	<?php echo CHtml::encode($data->is_code); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rp_report')); ?>:</b>
-	<?php echo CHtml::encode($data->rp_report); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('rp_report')); ?>:</b><br/>
+	<?php echo nl2br(CHtml::encode($data->rp_report)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('st_id')); ?>:</b>
