@@ -37,6 +37,12 @@
     </div>
 
     <div class="row">
+	<?php echo $form->labelEx($model,'is_comment'); ?>
+	<?php echo $form->textArea($model,'is_comment',array('rows'=>6, 'cols'=>50)); ?>
+	<?php echo $form->error($model,'is_comment'); ?>
+    </div>
+
+    <div class="row">
 	<?php 
             echo $form->labelEx($model,'py_id'); 
             $categories = Priority::model()->findAll();

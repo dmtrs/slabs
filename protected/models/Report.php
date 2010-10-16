@@ -94,6 +94,7 @@ class Report extends CActiveRecord
 			'rp_report' => 'Rp Report',
 			'st_id' => 'St',
 			'us_name' => 'Us Name',
+			'rp_comment'=>'Comment',
 		);
 	}
 

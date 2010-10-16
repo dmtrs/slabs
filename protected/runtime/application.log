@@ -1423,3 +1423,28 @@ Stack trace:
 #21 /home/dmtrsslvdr/public_html/yii/framework/base/CApplication.php(135): CWebApplication->processRequest()
 #22 /home/dmtrsslvdr/public_html/slabs/index.php(13): CApplication->run()
 #23 {main} REQUEST_URI=/slabs/index.php?r=person/view&id=3
+2010/10/17 00:53:37 [warning] [application] Failed to set unsafe attribute "is_comment".
+in /home/dmtrsslvdr/public_html/slabs/protected/controllers/IssueController.php (98)
+in /home/dmtrsslvdr/public_html/slabs/index.php (13)
+2010/10/17 00:53:37 [error] [system.db.CDbCommand] Error in executing SQL: INSERT INTO `slabs_issue` (`is_code`, `sc_id`, `is_title`, `is_report`, `py_id`, `ps_id`, `is_last_report`, `is_create_date`, `us_name`, `st_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9)
+in /home/dmtrsslvdr/public_html/slabs/protected/controllers/IssueController.php (99)
+in /home/dmtrsslvdr/public_html/slabs/index.php (13)
+2010/10/17 00:53:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4cba1eb1563ca' for key 'is_code_UNIQUE'' in /home/dmtrsslvdr/public_html/yii/framework/db/CDbCommand.php:227
+Stack trace:
+#0 /home/dmtrsslvdr/public_html/yii/framework/db/ar/CActiveRecord.php(954): CDbCommand->execute()
+#1 /home/dmtrsslvdr/public_html/yii/framework/db/ar/CActiveRecord.php(713): CActiveRecord->insert(NULL)
+#2 /home/dmtrsslvdr/public_html/slabs/protected/controllers/IssueController.php(99): CActiveRecord->save()
+#3 /home/dmtrsslvdr/public_html/yii/framework/web/actions/CInlineAction.php(32): IssueController->actionCreate()
+#4 /home/dmtrsslvdr/public_html/yii/framework/web/CController.php(300): CInlineAction->run()
+#5 /home/dmtrsslvdr/public_html/yii/framework/web/filters/CFilterChain.php(129): CController->runAction(Object(CInlineAction))
+#6 /home/dmtrsslvdr/public_html/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /home/dmtrsslvdr/public_html/yii/framework/web/CController.php(999): CFilter->filter(Object(CFilterChain))
+#8 /home/dmtrsslvdr/public_html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/dmtrsslvdr/public_html/yii/framework/web/filters/CFilterChain.php(126): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/dmtrsslvdr/public_html/yii/framework/web/CController.php(283): CFilterChain->run()
+#11 /home/dmtrsslvdr/public_html/yii/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/dmtrsslvdr/public_html/yii/framework/web/CWebApplication.php(320): CController->run('create')
+#13 /home/dmtrsslvdr/public_html/yii/framework/web/CWebApplication.php(120): CWebApplication->runController('issue/create')
+#14 /home/dmtrsslvdr/public_html/yii/framework/base/CApplication.php(135): CWebApplication->processRequest()
+#15 /home/dmtrsslvdr/public_html/slabs/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/slabs/index.php?r=issue/create

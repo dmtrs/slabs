@@ -112,6 +112,7 @@ class Issue extends CActiveRecord
 			'is_last_report' => 'Last issue report date',
 			'us_name' => 'User Name',
 			'ps_id' => 'Person',
+			'is_comment'=>'Comment',
 		);
 	}
 
