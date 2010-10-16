@@ -70,10 +70,10 @@ class Issue extends CActiveRecord
 			array('is_code', 'length', 'max'=>30),
 			array('is_title', 'length', 'max'=>50),
 			array('us_name', 'length', 'max'=>45),
-			array('is_create_date, is_last_report', 'safe'),
+			array('is_create_date, is_last_report, is_comment', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('is_id, is_code, sc_id, se_id, st_id, is_title, is_report, py_id, is_create_date, is_last_report, us_name, ps_id', 'safe', 'on'=>'search'),
+			array('is_id, is_code, sc_id, se_id, st_id, is_title, is_report, py_id, is_create_date, is_last_report, is_comment, us_name, ps_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -148,6 +148,8 @@ class Issue extends CActiveRecord
 		$criteria->compare('us_name',$this->us_name,true);
 		
 		$criteria->compare('ps_id', $this->ps_id);
+
+		$criteria->compare('is_comment', $this->ps_id, true);
 
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,

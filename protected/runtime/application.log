@@ -1448,3 +1448,9 @@ Stack trace:
 #14 /home/dmtrsslvdr/public_html/yii/framework/base/CApplication.php(135): CWebApplication->processRequest()
 #15 /home/dmtrsslvdr/public_html/slabs/index.php(13): CApplication->run()
 #16 {main} REQUEST_URI=/slabs/index.php?r=issue/create
+2010/10/17 00:57:12 [warning] [application] Failed to set unsafe attribute "is_comment".
+in /home/dmtrsslvdr/public_html/slabs/protected/controllers/IssueController.php (98)
+in /home/dmtrsslvdr/public_html/slabs/index.php (13)
+2010/10/17 00:57:26 [warning] [application] Failed to set unsafe attribute "is_comment".
+in /home/dmtrsslvdr/public_html/slabs/protected/controllers/IssueController.php (98)
+in /home/dmtrsslvdr/public_html/slabs/index.php (13)
