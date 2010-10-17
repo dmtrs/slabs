@@ -18,7 +18,7 @@
 
 	<?php	if(isset($data->rp_comment)) 
 		{
-			echo "<br />";
+			echo "<b>";
 			echo CHtml::encode($data->getAttributeLabel('rp_comment')); ?>:</b><br/>
 			<?php echo nl2br(CHtml::encode($data->rp_comment));
 			echo "<br />";
