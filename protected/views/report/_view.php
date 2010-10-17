@@ -16,6 +16,14 @@
 	<?php echo nl2br(CHtml::encode($data->rp_report)); ?>
 	<br />
 
+	<?php	if(isset($data->rp_comment)) 
+		{
+			echo "<br />";
+			echo CHtml::encode($data->getAttributeLabel('rp_comment')); ?>:</b><br/>
+			<?php echo nl2br(CHtml::encode($data->rp_comment));
+			echo "<br />";
+		} ?>
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('st_id')); ?>:</b>
 	<?php echo CHtml::encode($data->st_id); ?>
 	<br />

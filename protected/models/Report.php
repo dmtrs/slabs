@@ -61,9 +61,10 @@ class Report extends CActiveRecord
 			array('st_id', 'numerical', 'integerOnly'=>true),
 			array('is_code', 'length', 'max'=>30),
 			array('us_name', 'length', 'max'=>45),
+			array('rp_comment','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('rp_id, rp_date, is_code, rp_report, st_id, us_name', 'safe', 'on'=>'search'),
+			array('rp_id, rp_date, is_code, rp_report, st_id, us_name, rp_comment', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -115,6 +116,7 @@ class Report extends CActiveRecord
 		$criteria->compare('rp_report',$this->rp_report,true);
 		$criteria->compare('st_id',$this->st_id);
 		$criteria->compare('us_name',$this->us_name,true);
+		$criteria->compare('rp_comment',$this->rp_comment,true);
 
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,

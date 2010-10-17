@@ -16,6 +16,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'rp_comment'); ?>
+		<?php echo $form->textArea($model,'rp_comment',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'rp_comment'); ?>
+	</div>
+
+	<div class="row">
 		<?php 	echo $form->labelEx($model,'st_id'); 
 			$st = Status::model()->findAll();
 			//Use CDbCriteria to remove Open status

@@ -67,7 +67,7 @@ class IssueController extends Controller
 		$report = new Report;
 		$report->is_code = $issue->is_code;
 		if(isset($_POST['Report']))
-		{
+		{	
 			$report->attributes = $_POST['Report'];
 			$report->is_code = $issue->is_code;
 			if($report->save())
