@@ -21,7 +21,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('is_report')); ?>:</b>
-	<?php echo CHtml::encode($data->is_report); ?>
+	<?php echo nl2br(CHtml::encode($data->is_report)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('py_id')); ?>:</b>
